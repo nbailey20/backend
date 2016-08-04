@@ -2,9 +2,8 @@
 
 
 module.exports = function (app) {
-//	var DateHandler = require(process.cwd() + "/app/controllers/dateHandler.js");
 	
-	app.route("/home") 
+	app.route("/") 
 		.get(function (req, res) {
 			res.sendFile(process.cwd() + "/public/index.html");
 		});	
@@ -12,11 +11,6 @@ module.exports = function (app) {
 	
 	app.route("/:dateID") 
 		.get(function (req, res) {
-			//DateHandler(req.params.dateID, function (err, data) {
-			// 	if (err) throw err;
-			// 	res.send(JSON.stringify(data));
-			// });
-			
 			var obj = {unix: "", natural: ""};
 		    var arr = req.params.dateID.split(" ");
 		    var months = ["January", "February", "March", "April", "May", 
@@ -49,7 +43,6 @@ module.exports = function (app) {
 		            obj['natural'] = months[natural.getMonth()] + " " + natural.getDate() + ", " + natural.getFullYear();
 		        }
 		    }
-		    
 		    res.send(obj);
 		});
 };
