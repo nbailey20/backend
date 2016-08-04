@@ -1,7 +1,9 @@
 'use strict';
 
-var DateHandler = require(process.cwd() + "/app/controllers/dateHandler.js");
+
 module.exports = function (app) {
+	var DateHandler = require(process.cwd() + "/app/controllers/dateHandler.js");
+	
 	app.route("/") 
 		.get(function (req, res) {
 			res.sendFile(process.cwd() + "/public/index.html");
