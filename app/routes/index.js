@@ -14,7 +14,7 @@ module.exports = function (app) {
 		.get(function (req, res) {
 			DateHandler(req.params.dateID, function (err, data) {
 				if (err) throw err;
-				res.send(data);
+				res.render(process.cwd() + "/public/response.pug", {date: data});
 			});
 		});
 };
