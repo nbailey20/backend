@@ -4,7 +4,7 @@
 module.exports = function (app) {
 	var DateHandler = require(process.cwd() + "/app/controllers/dateHandler.js");
 	
-	app.route("/") 
+	app.route("/home") 
 		.get(function (req, res) {
 			res.sendFile(process.cwd() + "/public/index.html");
 		});	
