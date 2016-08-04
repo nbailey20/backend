@@ -9,6 +9,6 @@ app.use('/public', express.static(process.cwd() + '/public'));
 
 routes(app);
 
-app.listen(8080, function () {
+app.listen(process.env.PORT, function () {
 	console.log("Listening on port 8080...");
 });
